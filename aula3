@@ -1,0 +1,212 @@
+#criar uma base de dados para aula
+create database aula3;
+
+
+
+#visualizar as bases existentes
+
+show databases;
+
+
+
+#conectar a base
+
+use aula3;
+
+
+
+create table aluno(
+
+    idaluno int primary key auto_increment,
+
+    nome varchar(30) not null,
+
+    idade int not null,
+
+    sexo enum('m','f') not null,
+
+    email varchar(30) 
+
+);
+
+
+
+# descrever os dados de uma tabela
+
+desc aluno;
+
+
+
+# inserir dados na tabela de aluno
+
+insert into aluno values
+
+(null,"joao",43,"m","joao@gmail.com");
+
+insert into aluno values
+
+(null,"celia",34,"f","celia@gmail.com");
+
+insert into aluno values
+
+(null,"carlos",35,"m","carlos@bol.com");
+
+insert into aluno values
+
+(null,"vitor",17,"m","vitor@globo.com");
+
+insert into aluno values
+
+(null,"laura",18,"f","laura@globo.com");
+
+insert into aluno values
+
+(null,"vitoria",17,"m","vitoria@gmail.com");
+
+
+
+# visualizar os registros da tabela
+
+select * from aluno;
+
+
+
+# Selecionar os alunos que tem mais 
+
+#que 30 anos
+
+select * from aluno where idade >=30;
+
+
+
+# selecionar os alunos com email da ig
+
+select  * from aluno where email = "globo";
+
+Retornou vazio.....
+
+
+
+select * from aluno where email like "%globo%";
+
+
+
+# buscarem todos os alunos do sexo masculino que tenham  o email da globo
+
+
+
+
+
+# TRAZER A QUANTIDADE DE ALUNOS DO SEXO FEMININO E DO MASCULINO
+
+
+
+
+
+SELECT 10 + 10 AS "SOMA";
+
+SELECT COUNT(*) AS "QUANTIDADE", SEXO FROM ALUNO GROUP BY SEXO;
+
+
+
+CREATE TABLE TELEFONE(
+
+    IDTELEFONE INT PRIMARY KEY AUTO_INCREMENT,
+
+    TIPO ENUM('RES','COM','CEL') NOT NULL,
+
+    NUMERO VARCHAR(10) NOT NULL,
+
+    ID_ALUNO INT,
+
+    FOREIGN KEY(ID_ALUNO) REFERENCES ALUNO(IDALUNO)
+
+);
+
+inser
+
+insert into telefone values
+
+(null,'cel','1111-2222',1);
+
+insert into telefone values
+
+(null,'res','1111-3333',1);
+
+insert into telefone values
+
+(null,'com','1111-4444',1);
+
+insert into telefone values
+
+(null,'cel','2222-2222',2);
+
+insert into telefone values
+
+(null,'res','2222-3333',2);
+
+insert into telefone values
+
+(null,'cel','1111-4444',3);
+
+insert into telefone values
+
+(null,'cel','1111-5555',4);
+
+insert into telefone values
+
+(null,'cel','1111-6666',5);
+
+insert into telefone values
+
+(null,'res','9999-4444',6);
+
+
+
+Crie um banco de dados com o nome exercício3
+
+Dentro dele as seguintes tabelas
+
+Produto
+
+                                             Idproduto
+
+                                             Nome
+
+                                             Descrição
+
+                                             Valor
+
+Cliente
+
+                                             Idcliente
+
+                                             Nome
+
+                                             Telefone
+
+ 
+
+ 
+
+Ao criar a tabela de venda , inclua o relacionamento entre as tabelas de produto e cliente.         
+
+Venda
+
+                                             Idvenda
+
+                                             Datavenda
+
+                                             Quantidade
+
+                                             Idproduto
+
+                                             Idcliente
+
+ 
+
+Cadastre 5 produtos na tabela de produto
+
+Cadastre 5 clientes na tabela de cliente
+
+ 
